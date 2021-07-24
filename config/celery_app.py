@@ -20,9 +20,13 @@ app = Celery("ctx", include=[
 app.config_from_object("django.conf:settings", namespace="CELERY")
 app.conf.task_default_queue = "default"
 app.conf.beat_schedule = {
-    'every-midnight': {
+    'every-midnight-flights': {
         'task': 'apps.core.tasks.get_flights',
         'schedule': crontab(hour=0, minute=0),
+    },
+    'checker-flights': {
+        'task': 'apps.core.tasks.check_flight',
+        'schedule': crontab(hour=1, minute=0),
     }
 }
 

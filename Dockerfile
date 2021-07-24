@@ -52,7 +52,7 @@ ENV PORT ${PORT:-8000}
 ARG PROCESSES_NUM
 ENV PROCESSES_NUM ${PROCESSES_NUM:-4}
 
-COPY ctx /app
+COPY . /app
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh

@@ -6,7 +6,7 @@ volumes:
 services:
   web:
     build: .
-    command: /bin/sh -c 'python manage.py migrate && python manage.py runserver 0.0.0.0:8000'
+    command: /docker-entrypoint.sh
     volumes:
       - .:/app
     ports:
@@ -52,6 +52,6 @@ services:
     volumes:
       - postgres:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=ctx_user
-      - POSTGRES_PASSWORD=ctx_password
-      - POSTGRES_DB=ctx_db
+      - POSTGRES_USER=aviata
+      - POSTGRES_PASSWORD=aviata
+      - POSTGRES_DB=aviata_db
