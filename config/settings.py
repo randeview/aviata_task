@@ -38,7 +38,9 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     'rest_framework',
-    'drf_yasg'
+    'drf_yasg',
+    'django_filters',
+    'django_extensions'
 ]
 LOCAL_APPS = [
     'apps.core'
@@ -75,7 +77,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
-
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 10,
+}
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -113,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Almaty'
 
 USE_I18N = True
 
@@ -151,3 +156,7 @@ CELERY_ACKS_LATE = True
 CELERY_TASK_PUBLISH_RETRY = True
 CELERY_DISABLE_RATE_LIMITS = False
 CELERY_TASK_TRACK_STARTED = True
+CELERY_TIMEZONE = TIME_ZONE
+
+PARTNER_AFFIL_ID = os.getenv('PARTNER_AFFIL_ID', 'randeviewaviata')
+SKY_PICKER_URL = os.getenv('SKY_PICKER_URL', 'https://api.skypicker.com')

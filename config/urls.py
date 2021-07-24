@@ -12,7 +12,7 @@ admin.site.index_title = ' '
 
 internal_schema_view = get_schema_view(
     openapi.Info(
-        title="CTX API", default_version="v1",
+        title="AVIATA API", default_version="v1",
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
@@ -20,7 +20,7 @@ internal_schema_view = get_schema_view(
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="CTX API", default_version="v1",
+        title="AVIATA API", default_version="v1",
     ),
     public=False,
     permission_classes=(permissions.AllowAny,),

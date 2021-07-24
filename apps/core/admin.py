@@ -1,5 +1,12 @@
 from django.contrib import admin
 
-from apps.core.models import City
+from apps.core.models import City, Directories, Flight
+
+
+class FlightAdmin(admin.ModelAdmin):
+    list_display = ['from_city', 'to_city', 'flight_date', 'price', 'duration']
+
 
 admin.site.register(City)
+admin.site.register(Directories)
+admin.site.register(Flight, FlightAdmin)

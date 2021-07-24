@@ -1,0 +1,74 @@
+[
+  {
+    "model": "core.directories",
+    "pk": 1,
+    "fields": {
+      "from_city": "ALA",
+      "to_city": "TSE"
+    }
+  },
+  {
+    "model": "core.directories",
+    "pk": 2,
+    "fields": {
+      "from_city": "TSE",
+      "to_city": "ALA"
+    }
+  },
+  {
+    "model": "core.directories",
+    "pk": 3,
+    "fields": {
+      "from_city": "ALA",
+      "to_city": "MOW"
+    }
+  },
+  {
+    "model": "core.directories",
+    "pk": 4,
+    "fields": {
+      "from_city": "MOW",
+      "to_city": "ALA"
+    }
+  },
+  {
+    "model": "core.directories",
+    "pk": 5,
+    "fields": {
+      "from_city": "ALA",
+      "to_city": "CIT"
+    }
+  },
+  {
+    "model": "core.directories",
+    "pk": 6,
+    "fields": {
+      "from_city": "CIT",
+      "to_city": "ALA"
+    }
+  },
+  {
+    "model": "core.directories",
+    "pk": 7,
+    "fields": {
+      "from_city": "MOW",
+      "to_city": "TSE"
+    }
+  },
+  {
+    "model": "core.directories",
+    "pk": 8,
+    "fields": {
+      "from_city": "TSE",
+      "to_city": "LED"
+    }
+  },
+  {
+    "model": "core.directories",
+    "pk": 9,
+    "fields": {
+      "from_city": "LED",
+      "to_city": "TSE"
+    }
+  }
+]

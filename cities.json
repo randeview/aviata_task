@@ -1,0 +1,42 @@
+[
+  {
+    "model": "core.city",
+    "pk": 1,
+    "fields": {
+      "name": "Алматы",
+      "code": "ALA"
+    }
+  },
+  {
+    "model": "core.city",
+    "pk": 2,
+    "fields": {
+      "name": "Нур-Султан",
+      "code": "TSE"
+    }
+  },
+  {
+    "model": "core.city",
+    "pk": 3,
+    "fields": {
+      "name": "Москва",
+      "code": "MOW"
+    }
+  },
+  {
+    "model": "core.city",
+    "pk": 4,
+    "fields": {
+      "name": "Шымкент",
+      "code": "CIT"
+    }
+  },
+  {
+    "model": "core.city",
+    "pk": 5,
+    "fields": {
+      "name": "Санк-Петербург",
+      "code": "LED"
+    }
+  }
+]
