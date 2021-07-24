@@ -4,7 +4,7 @@ from apps.core.models import City, Directories, Flight
 
 
 class FlightAdmin(admin.ModelAdmin):
-    list_display = ['from_city', 'to_city', 'flight_date', 'price', 'duration']
+    list_display = ['from_city', 'to_city', 'flight_date', 'price', 'duration', 'flight_checked']
 
 
 admin.site.register(City)

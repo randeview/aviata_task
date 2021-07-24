@@ -144,7 +144,7 @@ MEDIA_ROOT = os.getenv("MEDIA_ROOT", os.path.join(BASE_DIR, "media"))
 REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
 REDIS_PORT = os.getenv("REDIS_PORT", "6379")
 
-CELERY_BROKER_URL = "redis://{host}:{port}".format(
+CELERY_BROKER_URL = "redis://{host}:{port}/0".format(
     host=REDIS_HOST,
     port=REDIS_PORT
 )
@@ -160,3 +160,4 @@ CELERY_TIMEZONE = TIME_ZONE
 
 PARTNER_AFFIL_ID = os.getenv('PARTNER_AFFIL_ID', 'randeviewaviata')
 SKY_PICKER_URL = os.getenv('SKY_PICKER_URL', 'https://api.skypicker.com')
+SKY_CHECK_URL = os.getenv('SKY_CHECK_URL', 'https://booking-api.skypicker.com/api/v0.1')

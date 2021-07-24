@@ -21,7 +21,7 @@ class FlightSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Flight
-        fields = ['id', 'from_city', 'to_city', 'price', 'flight_date']
+        fields = ['id', 'from_city', 'to_city', 'price', 'flight_date', 'flight_checked']
 
 
 class FlightDetailSerializer(serializers.ModelSerializer):

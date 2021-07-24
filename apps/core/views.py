@@ -9,7 +9,7 @@ from apps.core.serializers import FlightSerializer, FlightDetailSerializer
 
 
 class FlightViewSet(ReadOnlyModelViewSet):
-    queryset = Flight.objects.all().order_by('flight_date')
+    queryset = Flight.objects.actual().order_by('price')
     serializer_class = FlightSerializer
     retrieve_serializer_class = FlightDetailSerializer
 
@@ -20,3 +20,4 @@ class FlightViewSet(ReadOnlyModelViewSet):
         return self.serializer_class
 
     filter_backends = [DjangoFilterBackend, SearchFilter]
+    filter_class = FLightListFilter
