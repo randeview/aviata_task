@@ -25,9 +25,15 @@ class SkyPicker:
         self.method = method
         self.url = os.path.join(self.base_url, method)
 
-    def get_most_cheap_flights(self, response):
-        data = response.get('data', [])
-        return sorted(data, key=lambda k: k['price'])[:self.count_flights]
+    def get_most_cheap_flights(self, data):
+        list_flights = data.get('data', [])
+        return sorted(list_flights, key=lambda k: k['price'])[:self.count_flights]
+
+    def do_request_get(self, url, params, headers):
+        response = requests.get(url, params=params, headers=headers)
+        if response.ok:
+            return response.json()
+        return self.handle_service_exception(response)
 
     def get_flights(self, fly_from, fly_to, date_from, date_to):
         params = {
@@ -39,12 +45,8 @@ class SkyPicker:
             'adults': 1,
             'infants': 1
         }
-
-        response = requests.get(self.url, params=params, headers=self.headers)
-        if response.ok:
-            return self.get_most_cheap_flights(response.json())
-        else:
-            return self.handle_service_exception(response)
+        data = self.do_request_get(url=self.url, params=params, headers=self.headers)
+        return self.get_most_cheap_flights(data)
 
     def check_flight(self, booking_token, pnum=1, bnum=1, adults=1):
         self.url = os.path.join(self.check_url, self.method)
@@ -54,11 +56,7 @@ class SkyPicker:
             'bnum': bnum,
             'adults': adults,
         }
-        response = requests.get(self.url, params=params, headers=self.headers)
-        if response.ok:
-            return response.json()
-        else:
-            return self.handle_service_exception(response)
+        return self.do_request_get(url=self.url, params=params, headers=self.headers)
 
     def handle_service_exception(self, response):
         return response.text
